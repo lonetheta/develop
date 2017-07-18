@@ -1,3 +1,17 @@
+
+(a1+a2+a3...+aj)/j¡Ýmid
+
+or
+
+(a1+a2+a3...+aj)¡Ýj?mid
+
+or
+
+(a1?mid)+(a2?mid)+(a3?mid)...+(aj?mid)¡Ý0
+
+
+
+
 public class Solution {
 	   boolean check(int[] nums, int k, double mid){
 		   double sum = 0;
