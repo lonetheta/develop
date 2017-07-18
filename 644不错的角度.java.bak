@@ -1,0 +1,43 @@
+public class Solution {
+	    boolean check(int[] nums, int k, double x) {
+            double y = 0;
+			for(int j=0; j<k; j++)
+				{
+					y += nums[j];
+				}
+		    if((y/k)> x) return true;
+			for(int i=k; i<nums.length; i++)
+				{
+				y = y + nums[i] - nums[i-k];
+				if((y/k)> x) return true;
+			}
+			return false;
+		}
+		  public double findMaxAverage(int[] nums, int k) {
+			double max = Double.MAX_VALUE;
+			double min = -Double.MAX_VALUE;
+			double mid = 0;
+			while ((max-min)>0.0000001)
+			{ 
+				mid = (max+min)/2;
+				for (int i=k; i<nums.length+1; i++)
+				{
+					 if (check(nums, i, mid))
+				    {
+					       min = mid;
+                           break;
+						   
+				    }
+				     if (i == nums.length) 
+				    {
+					      max = mid;
+                          break;
+				    }
+                   
+				}
+				
+				
+			}
+			return max;
+	    }
+}
